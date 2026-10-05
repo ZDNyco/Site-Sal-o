@@ -1,0 +1,43 @@
+/* Root and Var */
+:root{
+    --coffe: #4B2F35;
+    --wine: #b9648c;
+    --purple: #8973AB;
+    --creme: #F9D0C5;
+    --white: #fcefee;
+
+    --font-display: 'Playfair Display', Georgia, serif;
+    --font-body:    'Raleway', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--white);
+    color: var(--coffe);
+    line-height: 1.5;
+}
+/* Removing sublineal links not used for now*/
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: 0.3s;
+}
+
+
+
+
+/* Header */
+.logo img{
+    width: 40px;
+    height: 48px;
+}
