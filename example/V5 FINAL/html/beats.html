@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prod. Radeski - Beats</title>
+    <link rel="stylesheet" href="../styles/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo"><img src="../images/logo.png" alt="Logo">PROD. RADESKI</div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="../index.html">Início</a></li>
+                <li><a href="../html/beats.html" class="active">Beats</a></li>
+                <li><a href="../html/estrutura.html">Estrutura</a></li>
+                <li><a href="../html/sobre.html">Sobre</a></li>
+            </ul>
+        </nav>
+        <div class="menu-toggle" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
+    </header>
+
+    <main class="page-section">
+        <section class="hero beats-hero" style="background-image: url('../images/bg_04.jpg')">
+            <h1>Beats</h1>
+        </section>
+
+        <section class="category-grid-section">
+            <h2>ESCOLHA POR UM DE NOSSOS PACKS:</h2>
+            <div class="grid-container">
+                <div class="grid-item"><a href="https://h7.cl/1kKAc" target="_blank"><img src="../images/bt_ilu_01.png" alt="POP"><h3>POP</h3></a></div>
+                <div class="grid-item"><a href="https://h7.cl/1kKAc" target="_blank"><img src="../images/bt_ilu_02.png" alt="TRAP"><h3>TRAP</h3></a></div>
+                <div class="grid-item"><a href="https://h7.cl/1kKAc" target="_blank"><img src="../images/bt_ilu_03.png" alt="FUNK"><h3>FUNK</h3></a></div>
+                <div class="grid-item"><a href="https://h7.cl/1kKAc" target="_blank"><img src="../images/bt_ilu_04.png" alt="R&B"><h3>R&B</h3></a></div>
+            </div>
+        </section>
+
+        <section class="product-section bg-black">
+            <div class="container flex-row">
+                <div class="product-visual">
+                    <img src="../images/bt_ilu_05.png" alt="Pack Pop">
+                    <div class="price-box">
+                        <h3>PACK POP POR:</h3>
+                        <span class="price">R$ 49,99</span>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h2>Quem pediu um <em id="em-red">POP?</em></h2>
+                    <p>Se você busca aquele beat que gruda na cabeça, está no lugar certo! <br><br>Na seção "Quem pediu um Pop?", você encontra desde o Pop tradicional com batidas dançantes até fusões inovadoras. Seja um Pop eletrônico com sintetizadores, um Pop R&B cheio de groove ou um Pop rock com guitarras marcantes, temos beats atuais, de alta qualidade, prontos para seu próximo hit.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="product-section bg-green">
+            <div class="container flex-row">
+                <div class="product-visual">
+                    <img src="../images/bt_ilu_06.png" alt="Pack Trap">
+                    <div class="price-box">
+                        <h3>PACK TRAP POR:</h3>
+                        <span class="price">R$ 49,99</span>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h2>Cês tão prontos pro <em id="em-yellow" >DROP?</em></h2>
+                    <p>Se você quer aquele grave que faz o chão tremer, achou o lugar certo! <br><br>Na seção "Cês tão prontos pro Drop?", o 808 reina. Tem Trap clássico com caixas marcantes, Trap melódico com synths hipnotizantes, Trap de rua pesado e fusões com Drill, Phonk e mais. Beats exclusivos, atuais e de alta qualidade, prontos pra você.</p>
+                </div>
+            </div>
+        </section>
+        <section class="product-section bg-black">
+            <div class="container flex-row">
+                <div class="product-visual">
+                    <img src="../images/bt_ilu_07.png" alt="Pack Funk">
+                    <div class="price-box">
+                        <h3>PACK FUNK POR:</h3>
+                        <span class="price">R$ 49,99</span>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h2>Tá rolando um <em id="em-blue">Baile?</em></h2>
+                    <p>Se a batida te chama pro baile, chega mais! <br><br>Na seção "Tá Rolando um Baile?", o grave domina. Tem Funk 150 BPM pra pista, Funk melody com vocais envolventes, Funk consciente com mensagens fortes e misturas com eletrônica, trap e mais. Energia, inovação e muito pancadão te esperam aqui!</p>
+                </div>
+            </div>
+        </section>
+        <section class="product-section bg-green">
+            <div class="container flex-row">
+                <div class="product-visual">
+                    <img src="../images/bt_ilu_08.png" alt="Pack R&B">
+                    <div class="price-box">
+                        <h3>PACK R&B POR:</h3>
+                        <span class="price">R$ 49,99</span>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h2>No Ritmo do <em id="em-purple">Amor?</em></h2>
+                    <p>Se você busca melodias que tocam a alma e beats cheios de sentimento, a seção "No Ritmo do Amor?" é o seu refúgio. <br><br>Aqui tem desde o R&B clássico, com influência do Soul, até o R&B atual, que mistura Hip Hop e eletrônica. Encontre grooves suaves, baixos marcantes e harmonias perfeitas para faixas românticas, de reflexão ou sobre amores e desilusões.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+        <section class="booking-section">
+        <div class="container booking-content">
+            <h2>PRONTO PARA GRAVAR?</h2>
+            <p>Garanta seu horário no estúdio e transforme suas ideias em hits.</p>
+            
+            <a href="https://h7.cl/1kKyV" 
+               class="btn-whatsapp" 
+               target="_blank">
+                <i class="fab fa-whatsapp"></i> AGENDAR AGORA
+            </a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="socials">
+                <a href="https://h7.cl/1kKz5"><i class="fab fa-facebook"></i></a>
+                <a href="https://h7.cl/1fS-0"><i class="fab fa-instagram"></i></a>
+                <a href="https://h7.cl/1fS-3"><i class="fab fa-tiktok"></i></a>
+            </div>
+            <p>Conecte-se com a gente!</p>
+            <p>Acompanhe nossos conteúdos e faça parte da família PROD. RADESKI!</p>
+            <div class="copyright">Todos os direitos reservados.</div>
+    </footer>
+    <script src="../scripts/script.js"></script>
+</body>
+</html>
