@@ -9,40 +9,99 @@
 <body>
     <header>
         <div class="logo"><img src="./images/Logo_1x1_2.jpg"><p>Espaço<br>Sempre Bella</p></div>
-        <nav class="nav-links">
-            <ul>
-                <li>Início</li>
-                <li>Sobre</li>
-                <li>Galeria</li>
-                <li>Contato</li>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#home-hero">Início</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contato">Contato</a></li>
             </ul>
 
         </nav>
         <div class="menu-toggle" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
     </header>
     
-    <main>
-        <section class="hero home-hero">
+    <main class="page-section">
+        <section id="home-hero">
             <div class="hero">
-                <h1></h1>
-                <p></p>
+                <p>Salão Feminino · Cabelo & Unhas</p>
+                <h1>Beleza que
+                    transforma
+                    vidas</h1>
+                <p>Cada visita é uma experiência única. Cuidamos do seu cabelo e das suas unhas com técnica, amor e os melhores produtos do mercado.</p>
+                <button>AGENDAR HORÁRIO</button>
+                <button>VER PORTFÓLIO</button>
             </div>
         </section>
         
-        <section class="Sobre">
-
+        <section id="sobre">
+            <div id="historia">
+                <p>NOSSA HISTORIA</p>
+                <h1>Feito com amor,<br>dedicado a você</h1>
+                <p>
+                    O Studio Beleza & Arte nasceu em 2026 do sonho de criar um espaço onde cada mulher se sentisse especial e acolhida. Mais do que um salão, somos um refúgio — um lugar onde você pode relaxar, se renovar e sair ainda mais linda.</p>
+            </div>
+            <div id="historia-2">
+                <p>Trabalhamos apenas com produtos de alta performance — L'Oréal, Keune, OPI e Essie — garantindo resultado e cuidado para seus cabelos e unhas. <br>
+                Nossa equipe se atualiza constantemente com cursos e workshops no Brasil e no exterior, trazendo as últimas tendências diretamente para você.</p>
+            </div>
         </section>
 
-        <section class="Serviços">
+        <section id="servicos">
+            <h1>Nossos Serviços</h1>
+            <div class="servico-1">
+                <p>Corte e Estilo</p>
+            </div>
 
+            <div class="servico-2">
+                <p>Coloração</p>
+            </div>
+            <div class="servico-3">
+                <p>Manicure e Pedicure</p>
+            </div>
+            <div class="servico-4">
+                <p>Tratamentos</p>
+            </div>
         </section>
 
-        <section class="Galeria">
+        <section id="portfolio">
+            <div>
+                    <p>NOSSO TRABALHO</p>
+                    <h1>Portfólio</h1>
+                    <p>Cada foto é uma história de transformação</p>
+            </div>
+            <div class="imgs-buttons">
+                <button id="todos">TODOS</button>
+                <button id="cabelo">CABELO</button>
+                <button id="unhas">UNHAS</button>
+                <button id="salao">SALÃO</button>
+            </div>
+            <div class="todos-img">
 
+            </div>
+            <div class="cabelo-img">
+
+            </div>
+            <div class="unhas-img">
+
+            </div>
+            <div class="salao-img">
+
+            </div>
         </section>
 
-        <section class="Contato">
+        <section id="contato">
+            <div class="horario">
+                <p>RESERVE SEU HORÁRIO</p>
+                <h1>Agendamento Online</h1>
+                <p>Preencha o formulário e conheça seu orçamento</p>
+            </div>
+            <div class="forms">
+                <form action=""></form>
+            </div>
+            <div class="whatsapp">
 
+            </div>
         </section>
     </main>
     <footer class="rodape">
