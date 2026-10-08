@@ -5,22 +5,94 @@ const detalhes = document.querySelector("#detalhes-servico");
 
 /* Smart Header */
 
+/* === Smart Header === */
+
 const header = document.querySelector("header");
-    const headerHeight = 80; 
-    let lastScrollY = 0; 
+const reopenButton = document.querySelector(".header-reopen");
+const menuToggle = document.querySelector(".menu-toggle");
+const nav = document.querySelector("header nav");
 
-    window.addEventListener("scroll", () => {
-        const currentScrollY = window.scrollY;
+let lastScrollY = window.scrollY;
 
-        if (currentScrollY > lastScrollY && currentScrollY > headerHeight) { 
-            header.classList.add("header-hidden");
-        } else if (currentScrollY < lastScrollY) {
-            header.classList.remove("header-hidden");
-        }
+function showHeader() {
+    header.classList.remove("header-hidden");
+    reopenButton.classList.remove("visible");
+}
 
-        lastScrollY = currentScrollY;
+function hideHeader() {
+    // No ocultar el header cuando estamos al inicio de la página
+    if (window.scrollY <= 80) {
+        showHeader();
+        return;
+    }
+
+    header.classList.add("header-hidden");
+    reopenButton.classList.add("visible");
+
+    // Cierra el menú móvil cuando se oculta el header
+    nav.classList.remove("menu-open");
+    menuToggle.setAttribute("aria-expanded", "false");
+    menuToggle.setAttribute("aria-label", "Abrir menu");
+}
+
+window.addEventListener("scroll", () => {
+    const currentScrollY = window.scrollY;
+
+    if (currentScrollY <= 80) {
+        showHeader();
+    } else if (currentScrollY > lastScrollY) {
+        // Bajando por la página
+        hideHeader();
+    } else if (currentScrollY < lastScrollY) {
+        // Subiendo por la página
+        showHeader();
+    }
+
+    lastScrollY = currentScrollY;
+}, { passive: true });
+
+/* Mostrar el header al acercar el mouse al borde superior */
+document.addEventListener("mousemove", (event) => {
+    if (event.clientY <= 20) {
+        showHeader();
+    }
+});
+
+/* Reabrir el header al pulsar la pestaña */
+reopenButton.addEventListener("click", showHeader);
+
+/* === Menu hamburguesa para celulares === */
+
+menuToggle.addEventListener("click", () => {
+    const isOpen = nav.classList.toggle("menu-open");
+
+    menuToggle.setAttribute("aria-expanded", String(isOpen));
+    menuToggle.setAttribute(
+        "aria-label",
+        isOpen ? "Fechar menu" : "Abrir menu"
+    );
+
+    // Si el header estaba oculto, mostrarlo
+    showHeader();
+});
+
+/* Cerrar el menú móvil al elegir una sección */
+nav.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+        nav.classList.remove("menu-open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.setAttribute("aria-label", "Abrir menu");
     });
+});
 
+/* Permitir cerrar el menú móvil con Escape */
+document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+        nav.classList.remove("menu-open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.setAttribute("aria-label", "Abrir menu");
+    }
+});
 
 /* Smart Serviços */
 const conteudos = {

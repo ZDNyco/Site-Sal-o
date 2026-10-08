@@ -62,8 +62,7 @@ header {
     padding: 0 40px;
     z-index: 1000;
     transition: top 0.3s ease-in-out;
-    border-bottom: 2px solid var(--purple);
-
+    border-bottom: 5px solid var(--purple);
 }
 
 /* === Logo === */
@@ -102,18 +101,105 @@ header {
     padding-bottom: 5px;
 }
 
-/* === Mobile menu === */
+/* Hide header/nav */
+.header-hidden {
+    top: -80px; 
+}
+
+/* Show header/nav */
+.header-reopen {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%) translateY(-100%);
+    z-index: 1001;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    padding: 6px 20px 8px;
+    border: 2px solid var(--purple);
+    border-top: none;
+    border-radius: 0 0 12px 12px;
+    background-color: var(--merengue);
+    color: var(--coffe);
+    cursor: pointer;
+
+    transition: transform 0.3s ease-in-out;
+    font-family: var(--font-body);
+    font-weight: 700;
+}
+.header-reopen.visible {
+    transform: translateX(-50%) translateY(0);
+}
+.reopen-arrow {
+    font-size: 1.3rem;
+    line-height: 1;
+}
+.reopen-text {
+    font-size: 0.65rem;
+    letter-spacing: 1px;
+}
+.header-reopen:hover,
+.header-reopen:focus-visible {
+    background-color: var(--creme);
+    outline: 2px solid var(--purple);
+    outline-offset: 2px;
+}
+
+/* === Mobile/Short-sized screen Menu === */
 .menu-toggle {
     display: none;
+    border: none;
+    background: transparent;
     color: var(--coffe);
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     cursor: pointer;
 }
 
-/* Not in use for now */
-/* .header-hidden {
-    top: -80px; 
-} */
+@media (max-width: 768px) {
+    header {
+        padding: 0 20px;
+    }
+    .menu-toggle {
+        display: block;
+    }
+    header nav {
+        display: none;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        padding: 20px;
+        background-color: var(--merengue);
+        border-bottom: 2px solid var(--purple);
+    }
+    header nav.menu-open {
+        display: block;
+    }
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+    header.header-hidden nav {
+        display: none;
+    }
+    .logo {
+        font-size: 1.1rem;
+    }
+    .logo img {
+        width: 35px;
+        height: 40px;
+    }
+}
+/* Less Animations */
+@media (prefers-reduced-motion: reduce) {
+    header,
+    .header-reopen {
+        transition: none;
+    }
+}
 
 /* === Hero === */
 
@@ -130,6 +216,7 @@ header {
     position: relative;
     text-align: start;
     justify-items: center;
+    border-top: 80px solid var(--purple); /* Fixes overlay white error */
     border-bottom: 5px solid var(--purple);
 }
 .hero::before {
@@ -265,5 +352,3 @@ header {
 
 .font-display { font-family: var(--font-display); }
 .font-body    { font-family: var(--font-body); }
-
-

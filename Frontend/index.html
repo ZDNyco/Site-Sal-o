@@ -11,20 +11,37 @@
         <div class="logo"><img src="./images/Logo_1x1_2.jpg"><p>Espaço<br>Sempre Bella</p></div>
         <nav>
             <ul class="nav-links">
-                <li><a href="#home-hero">Início</a></li>
+                <li><a href="#hero">Início</a></li>
                 <li><a href="#sobre">Sobre</a></li>
                 <li><a href="#portfolio">Portfolio</a></li>
                 <li><a href="#contato">Contato</a></li>
             </ul>
 
         </nav>
-        <div class="menu-toggle" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
+        <button
+            class="menu-toggle"
+            type="button"
+            aria-label="Abrir menu"
+            aria-expanded="false"
+        >
+            ☰
+        </button>
     </header>
     
+    <button
+        class="header-reopen"
+        type="button"
+        aria-label="Reabrir menu de navegacao"
+        title="Reabrir menu"
+    >
+        <span class="reopen-arrow" aria-hidden="true">⌄</span>
+        <span class="reopen-text">Menu</span>
+    </button>
+
     <main class="page-section">
-        <section class="hero home-hero">
+        <section id="hero" class="hero home-hero">
             <div class="hero-overlay">
-                <h4>Salão Feminino · Cabelo & Unhas</h4>
+                <h4>*Salão Feminino*Cabelo & Unhas*</h4>
                 <h1>
                     <span>Beleza que</span><br>
                     <span class="destaque">Transforma</span><br>
