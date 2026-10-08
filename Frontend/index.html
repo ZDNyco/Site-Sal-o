@@ -22,15 +22,19 @@
     </header>
     
     <main class="page-section">
-        <section id="home-hero">
-            <div class="hero">
-                <p>Salão Feminino · Cabelo & Unhas</p>
-                <h1>Beleza que
-                    transforma
-                    vidas</h1>
+        <section class="hero home-hero">
+            <div class="hero-overlay">
+                <h4>Salão Feminino · Cabelo & Unhas</h4>
+                <h1>
+                    <span>Beleza que</span><br>
+                    <span class="destaque">Transforma</span><br>
+                    <span>Vidas</span>
+                </h1>
                 <p>Cada visita é uma experiência única. Cuidamos do seu cabelo e das suas unhas com técnica, amor e os melhores produtos do mercado.</p>
-                <button>AGENDAR HORÁRIO</button>
-                <button>VER PORTFÓLIO</button>
+                <div class="button">
+                    <button>AGENDAR HORÁRIO</button>
+                    <button>VER PORTFÓLIO</button>
+                </div>
             </div>
         </section>
         
@@ -49,18 +53,28 @@
 
         <section id="servicos">
             <h1>Nossos Serviços</h1>
-            <div class="servico-1">
-                <p>Corte e Estilo</p>
-            </div>
+            <div class="servicos-container">
+                
+                <div class="servico" data-servico="corte">
+                    <h4>Corte e Estilo</h4>
+                    <p>Cortes modernos e clássicos adaptados ao seu rosto e personalidade.</p>
+                </div>
 
-            <div class="servico-2">
-                <p>Coloração</p>
+                <div class="servico" data-servico="coloracao">
+                    <h4>Coloração</h4>
+                    <p>Mechas, balayage, ombré e colorações completas com produtos premium.</p>
+                </div>
+                <div class="servico" data-servico="manicure">
+                    <h4>Manicure e Pedicure</h4>
+                    <p>Unhas perfeitas com esmaltes gel, acrigel, fibra e nail art.</p>
+                </div>
+                <div class="servico" data-servico="tratamentos">
+                    <h4>Tratamentos</h4>
+                    <p>Hidratação, cronograma capilar, botox e cauterização.</p>
+                </div>
             </div>
-            <div class="servico-3">
-                <p>Manicure e Pedicure</p>
-            </div>
-            <div class="servico-4">
-                <p>Tratamentos</p>
+            <div id="detalhes-servico">
+                Informacion de cada servicio
             </div>
         </section>
 

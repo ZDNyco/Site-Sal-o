@@ -3,6 +3,7 @@
     --coffe: #4B2F35;
     --dry-wine: #b9648c;
     --wine: #c02862;
+    --dry-purple: #8e7fa7;
     --purple: #9474c3;
     --neon-purple: #df5dff;
     --lilas: #D78BCA;
@@ -10,7 +11,8 @@
     --merengue: #F9E9E9;
     --white: #fcefee;
 
-    --font-display: 'Playfair Display', Georgia, serif;
+    --font-display1: 'Playfair Display', Georgia;
+    --font-display2: 'Playfair Display', serif;
     --font-body:    'Raleway', sans-serif;
 }
 
@@ -41,7 +43,12 @@ ul {
     list-style-type: none;
 }
 
-/* Header */
+/* 
+======================
+        HEADER
+====================== 
+*/
+
 header {
     position: fixed;
     top: 0;
@@ -54,10 +61,12 @@ header {
     align-items: center;
     padding: 0 40px;
     z-index: 1000;
-    border-bottom: none; 
     transition: top 0.3s ease-in-out;
+    border-bottom: 2px solid var(--purple);
+
 }
 
+/* === Logo === */
 .logo {
     font-size: 1.5rem;
     font-weight: 700;
@@ -72,6 +81,7 @@ header {
     margin-right: 10px;
 }
 
+/* === Nav Bar === */
 .nav-links {
     display: flex;
     gap: 1.5rem;
@@ -89,11 +99,10 @@ header {
 .nav-links a.active {
     color: var(--dry-wine);
     font-weight: 700;
-    border-bottom: 2px solid var(--purple);
     padding-bottom: 5px;
 }
 
-/* Mobile menu */
+/* === Mobile menu === */
 .menu-toggle {
     display: none;
     color: var(--coffe);
@@ -106,18 +115,147 @@ header {
     top: -80px; 
 } */
 
+/* === Hero === */
+
+.hero{
+    background-image: url("../images/Provisional_Bg.jpg");
+    font-family: var(--font-display2);
+    height: 100vh; 
+    width: 100%;
+    background-size: cover;
+    background-position: center; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    text-align: start;
+    justify-items: center;
+    border-bottom: 5px solid var(--purple);
+}
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(98, 77, 105, 0.5);
+    z-index: 1;
+}
+.hero h1 {
+    position: relative;
+    z-index: 2;
+    font-size: 5rem;
+    font-weight: 900;
+    letter-spacing: 2px;
+    color: var(--white);
+    display: grid;
+    justify-items: start;
+    line-height: 0.6;
+    margin-bottom: 50px;
+}
+.hero h1 br {
+    max-height: 1px;
+}
+.hero h1 .destaque {
+    color: var(--neon-purple);
+    font-style: italic;
+}
+.hero h4 {
+    color: var(--creme);
+    font-size: 2rem;
+    margin-bottom: 40px;
+}
+.home-hero .hero-overlay {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    padding: 150px;
+}
+.home-hero p {
+    font-size: 1.2rem;
+    margin-top: 20px;
+    font-weight: 300;
+    color: var(--creme);
+    font-family: var(--font-display1);
+}
+.hero-overlay .button {
+    display: grid;
+    grid-auto-flow: column;
+    align-content: space-around;
+    justify-content: center;
+}
+.button button{
+    margin: 10px;
+}
+/* 
+======================
+        SOBRE
+====================== 
+*/
+
+
+
+/* 
+======================
+        SERVIÇOS
+====================== 
+*/
+
+#servicos {
+    text-align: center;
+    padding: 50px;
+}
+
+.servicos-container {
+    display: flex !important;
+    gap: 20px;
+    justify-content: center;
+}
+
+.servico {
+    width: 200px;
+    height: 200px;
+    border: 2px solid #ddd;
+    padding: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    transition: 0.3s;
+}
+.servico p {
+    font-size: 12px;
+
+}
+
+.servico:hover {
+    transform: translateY(-5px);
+}
+
+.servico.ativo {
+    background-color: var(--coffe);
+    color: white;
+}
+
+#detalhes-servico {
+    display: none;
+
+    margin-top: 20px;
+    padding: 40px;
+
+    background-color: var(--creme);
+    text-align: left;
+}
 
 
 
 
 
-
-
-
-
-
-
-
+/* 
+======================
+        FOOTER
+====================== 
+*/
 
 /* Hide scrollbar until hover */
 ::-webkit-scrollbar { width: 4px; }
