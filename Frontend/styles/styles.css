@@ -1,4 +1,8 @@
-/* Root and Var */
+/* 
+==================
+            Root and Var 
+================== 
+*/
 :root{
     --coffe: #4B2F35;
     --dry-wine: #b9648c;
@@ -33,7 +37,7 @@ body {
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
 }
-/* Removing sublineal links not used for now*/
+/* Removing sublineal links not used for now, but active just if*/
 a {
     text-decoration: none;
     color: inherit;
@@ -44,9 +48,9 @@ ul {
 }
 
 /* 
-======================
-        HEADER
-====================== 
+===============
+            HEADER
+=============== 
 */
 
 header {
@@ -92,13 +96,16 @@ header {
     text-transform: uppercase;
 }
 .nav-links a:hover {
-    color: var(--lilas);
+    color: var(--neon-purple);
 }
-/* Not in use for now */
+
 .nav-links a.active {
-    color: var(--dry-wine);
+    color: var(--purple);
+    border-bottom: 3px solid var(--lilas);
+    border-radius: 20%;
     font-weight: 700;
     padding-bottom: 5px;
+
 }
 
 /* Hide header/nav */
@@ -201,7 +208,11 @@ header {
     }
 }
 
-/* === Hero === */
+/* 
+============= 
+            Hero 
+=============
+*/
 
 .hero{
     background-image: url("../images/Provisional_Bg.jpg");
@@ -272,12 +283,61 @@ header {
 .button button{
     margin: 10px;
 }
+.agendar{
+    width: 10rem;
+    height: 3rem;
+    color: var(--white);
+    background-color: var(--dry-wine);
+    border: 1px solid var(--dry-wine);
+}
+.ver-portfolio{
+    width: 10rem;
+    height: 3rem;
+    color: var(--white);
+    background-color: #b9648c08;
+    border: 1px solid var(--creme);
+}
+
 /* 
 ======================
         SOBRE
 ====================== 
 */
 
+.sobre-hero{
+    font-family: var(--font-display2);
+    height: 50vh; 
+    width: 100%;
+    background-size: cover;
+    background-position: center; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    text-align: start;
+    justify-items: center;
+    border-top: 40px solid var(--purple); /* Fixes overlay white error */
+    border-bottom: 5px solid var(--purple);
+}
+#historia-1{
+    height: 200px;
+    width: 50rem;
+    border-right: 2px solid var(--coffe);
+    padding-right: 1.5rem;
+    margin-left: 0.5rem;
+    background-color: var(--creme);
+    border-top-left-radius: 20%;
+    border-bottom-left-radius: 20%;
+}
+#historia-2{
+    height: 200px;
+    width: 50rem;
+    padding-left: 1.5rem;
+    background-color: var(--creme);
+    border-top-right-radius: 20%;
+    border-bottom-right-radius: 20%;
+    margin-right: 0.5rem;
+}
 
 
 /* 

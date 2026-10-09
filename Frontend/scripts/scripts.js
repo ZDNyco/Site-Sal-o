@@ -1,16 +1,11 @@
 const servicos = document.querySelectorAll(".servico");
 const detalhes = document.querySelector("#detalhes-servico");
-
-
-
-/* Smart Header */
-
-/* === Smart Header === */
-
 const header = document.querySelector("header");
 const reopenButton = document.querySelector(".header-reopen");
 const menuToggle = document.querySelector(".menu-toggle");
 const nav = document.querySelector("header nav");
+
+/* === Smart Header === */
 
 let lastScrollY = window.scrollY;
 
@@ -20,7 +15,6 @@ function showHeader() {
 }
 
 function hideHeader() {
-    // No ocultar el header cuando estamos al inicio de la página
     if (window.scrollY <= 80) {
         showHeader();
         return;
@@ -29,7 +23,6 @@ function hideHeader() {
     header.classList.add("header-hidden");
     reopenButton.classList.add("visible");
 
-    // Cierra el menú móvil cuando se oculta el header
     nav.classList.remove("menu-open");
     menuToggle.setAttribute("aria-expanded", "false");
     menuToggle.setAttribute("aria-label", "Abrir menu");
@@ -41,27 +34,23 @@ window.addEventListener("scroll", () => {
     if (currentScrollY <= 80) {
         showHeader();
     } else if (currentScrollY > lastScrollY) {
-        // Bajando por la página
         hideHeader();
     } else if (currentScrollY < lastScrollY) {
-        // Subiendo por la página
         showHeader();
     }
 
     lastScrollY = currentScrollY;
 }, { passive: true });
 
-/* Mostrar el header al acercar el mouse al borde superior */
 document.addEventListener("mousemove", (event) => {
     if (event.clientY <= 20) {
         showHeader();
     }
 });
 
-/* Reabrir el header al pulsar la pestaña */
 reopenButton.addEventListener("click", showHeader);
 
-/* === Menu hamburguesa para celulares === */
+/* === Hamburger for Mobile === */
 
 menuToggle.addEventListener("click", () => {
     const isOpen = nav.classList.toggle("menu-open");
@@ -71,12 +60,8 @@ menuToggle.addEventListener("click", () => {
         "aria-label",
         isOpen ? "Fechar menu" : "Abrir menu"
     );
-
-    // Si el header estaba oculto, mostrarlo
     showHeader();
 });
-
-/* Cerrar el menú móvil al elegir una sección */
 nav.querySelectorAll("a").forEach((link) => {
     link.addEventListener("click", () => {
         nav.classList.remove("menu-open");
@@ -84,8 +69,6 @@ nav.querySelectorAll("a").forEach((link) => {
         menuToggle.setAttribute("aria-label", "Abrir menu");
     });
 });
-
-/* Permitir cerrar el menú móvil con Escape */
 document.addEventListener("keydown", (event) => {
     if (event.key === "Escape") {
         nav.classList.remove("menu-open");
@@ -94,7 +77,54 @@ document.addEventListener("keydown", (event) => {
     }
 });
 
-/* Smart Serviços */
+const links = document.querySelectorAll(".nav-links a");
+const secciones = [];
+
+
+links.forEach(link =>{
+    const id = link.getAttribute("href");
+    if (id && id.startsWith("#")){
+        const seccion = document.querySelector(id);
+        if (seccion){
+            secciones.push({
+                enlace: link,
+                seccion: seccion
+            })
+        }
+    }    
+});
+function marcarEnlace(enlaceActivo) {
+    links.forEach(link => {
+        link.classList.toggle("active", link === enlaceActivo);
+    });
+}
+const observer = new IntersectionObserver((entradas) => {
+    entradas.forEach(entrada => {
+        if (entrada.isIntersecting) {
+            const actual = secciones.find(
+                item => item.seccion === entrada.target
+            );
+
+            if (actual) {
+                marcarEnlace(actual.enlace);
+            }
+        }
+    });
+}, {
+    rootMargin: "-25% 0px -60% 0px",
+    threshold: 0
+});
+secciones.forEach(item => {
+    observer.observe(item.seccion);
+});
+links.forEach(link => {
+    link.addEventListener("click", () => {
+        marcarEnlace(link);
+    });
+});
+
+
+/* === Smart Serviços === */
 const conteudos = {
 
     corte: `
